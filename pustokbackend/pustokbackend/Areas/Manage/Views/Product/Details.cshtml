@@ -1,0 +1,93 @@
+﻿@model Product
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between my-5">
+                        <button type="button" class="btn btn-primary">
+                            <a class="text-decoration-none text-white" 
+                            asp-area="manage" asp-action="index" 
+                            asp-controller="product">Go To Back
+                            </a>
+                        </button>
+                    </div>
+                  <h1 class="card-title">Product Details</h1>
+                  
+                  <div class="table-responsive text-center">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>
+                            Author Name
+                          </th>
+                          <th>
+                            Genre
+                          </th>
+                          <th>
+                            Book Name
+                          </th>
+                          <th>
+                            Price
+                          </th>
+                          <th>
+                            Sale Price
+                          </th>
+                          <th>
+                            Discount Price
+                          </th>
+                          <th>
+                            Book image
+                          </th>
+                          
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                         <tr>
+                             <td>
+                                  @Model.Author.Fullname
+                              </td>
+                              <td>
+                                  @Model.Genre.Name
+                              </td>
+                              <td>
+                                  @Model.Name
+                              </td>
+                              <td>
+                                  @(Model.SalePrice - Model.DiscountPrice)
+                              </td>
+                              <td>
+                                  @Model.SalePrice
+                              </td>
+                              <td>
+                                  @Model.DiscountPrice
+                              </td>
+                              <td>
+                               <div class="hero-partial-image image-left">
+                                    <img src="~/assets/image/Product Descriptions/@Model.Desciption" alt="">
+                               </div>
+                              </td>
+                             <td class="text-center">
+                                <a asp-area="admin" asp-controller="product" 
+                                asp-action="update" asp-route-id="@Model.Id"  
+                                class="btn btn-warning my-1">Update
+                                </a>  
+                                
+                                <a asp-area="admin" asp-controller="product" 
+                                asp-action="delete" asp-route-id="@Model.Id"  
+                                class="btn btn-danger my-1">Delete
+                                </a>
+                              </td>
+                          
+                          </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>

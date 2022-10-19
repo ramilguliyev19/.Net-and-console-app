@@ -1,0 +1,106 @@
+﻿@model List<Product>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-primary mb-5">
+                            <a class="text-decoration-none text-white" asp-area="manage"
+                               asp-action="index" asp-controller="dashboard">
+                                Go To Back
+                            </a>
+                        </button>
+                        <button type="button" class="btn btn-success mb-5">
+                            <a class="text-decoration-none text-white" asp-area="manage"
+                               asp-action="create" asp-controller="product">
+                                Create
+                            </a>
+                        </button>
+                    </div>
+
+                  <h1 class="card-title">Products</h1>
+                  
+                  <div class="table-responsive text-center">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr class="text-center">
+                            <th>
+                            Author Name
+                          </th>
+                          <th>
+                             Genre
+                          </th>
+                          <th>
+                            Book Name
+                          </th>
+                          <th>
+                             Sale Price
+                          </th>
+                          <th>
+                            Cost Price
+                          </th>
+                          <th>
+                             Discounted Price
+                          </th>
+                          <th>
+                            Book Image
+                          </th>                          
+                        </tr>
+                      </thead>
+                      <tbody class="text-center">
+                         @foreach (Product product in Model)
+                        {
+                            <tr>
+                              <td>
+                                  @product.Author.Fullname
+                              </td>
+                              <td>
+                                  @product.Genre.Name
+                              </td>
+                              <td>
+                                  @product.Name
+                              </td>
+                              <td>
+                                  @(product.SalePrice - product.DiscountPrice)
+                              </td>
+                              <td>
+                                  @product.SalePrice
+                              </td>
+                              <td>
+                                  @product.DiscountPrice
+                              </td>
+                              <td>
+                               <div class="hero-partial-image image-left">
+                                    <img src="~/assets/image/Product Descriptions/@product.Desciption" alt="">
+                               </div>
+                              </td>
+                              <td>
+
+                              <a asp-area="manage" asp-controller="product" 
+                                asp-action="details" asp-route-id="@product.Id" 
+                                class="btn btn-primary my-1">Details
+                                </a>
+
+                                <a asp-area="manage" asp-controller="product" 
+                                asp-action="update" asp-route-id="@product.Id"  
+                                class="btn btn-warning my-1">Update
+                                </a>
+                                
+                                <a asp-area="manage" asp-controller="product" 
+                                asp-action="delete" asp-route-id="@product.Id"  
+                                class="btn btn-danger my-1">Delete
+                                </a>   
+                              </td>
+                          </tr>
+                        }
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,28 @@
+﻿@model Feature
+<div class="container">
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Default form</h4>
+                    <form method="post"  class="forms-sample">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Title</label>
+                            <input  name="title" asp-for="@Model.Title1" class="form-control" id="exampleInputUsername1" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Subtitle</label>
+                            <input  name="subtitle"  asp-for="@Model.Title2" class="form-control" id="exampleInputEmail1" placeholder="Subtitle">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Icon</label>
+                            <input name="iconUrl"  asp-for="@Model.IconUrl" class="form-control" id="exampleInputPassword1" placeholder="Icon">
+                        </div>
+                        <button  type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+﻿@model CreateSliderVM
+
+<div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Create slider</h4>
+                  <form method="post" enctype="multipart/form-data" class="forms-sample">
+                    <div class="form-group">
+                      <label asp-for="Title"></label>
+                      <input asp-for="Title" class="form-control" placeholder="Title">
+                      <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="Description"></label>
+                      <input asp-for="Description" class="form-control" placeholder="Description">
+                      <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                      <label asp-for="ImageFile"></label>
+                      <input asp-for="ImageFile" accept="image/*" class="form-control">
+                      <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button asp-area="admin" asp-controller="slider" asp-action="index" class="btn btn-light">Cancel</button>
+                  </form>
+                </div>
+              </div>

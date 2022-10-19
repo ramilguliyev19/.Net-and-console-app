@@ -1,0 +1,70 @@
+﻿@model Product
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Product Update</h4>
+                  
+                  <form method="post" asp-route-id="@Model.Id" class="forms-sample">
+                    <div class="form-group">
+                      <label for="autorname">Autor Name</label>
+                      <input value="@Model.Author.Fullname" name="authorname" 
+                      type="text" class="form-control" id="authorname" 
+                      placeholder="Author Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="genre">Genre</label>
+                      <input value="@Model.Genre.Name" name="genre" 
+                      type="text" class="form-control" id="genre" 
+                      placeholder="Genre">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="book">Book Name</label>
+                      <input value="@Model.Name" name="book" 
+                      type="text" class="form-control" id="book" 
+                      placeholder="Book Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="salePrice">Sale Price</label>
+                      <input value="@Model.SalePrice" name="salePrice" 
+                      type="text" class="form-control" id="salePrice" 
+                      placeholder="Sale Price">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="costPrice">Cost Price</label>
+                      <input value="@Model.CostPrice" name="costPrice" 
+                      type="text" class="form-control" id="costPrice" 
+                      placeholder="Cost Price">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="discountedPrice">Discount Price</label>
+                      <input value="@Model.DiscountPrice" name="discountedPrice" 
+                      type="text" class="form-control" id="discountedPrice" 
+                      placeholder="Discount Price">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="image">Image</label>
+                      <input value="@Model.Desciption" name="image" 
+                      type="text" class="form-control" id="image" 
+                      placeholder="Image">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>                        
+                    <a asp-area="manage" asp-controller="product" 
+                       asp-action="index" asp-route-id="@Model.Id"   
+                       class="btn btn-light">Cancel
+                   </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>

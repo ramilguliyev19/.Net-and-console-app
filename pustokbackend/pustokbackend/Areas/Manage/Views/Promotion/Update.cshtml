@@ -1,0 +1,33 @@
+﻿@model Promotion
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Update promotion </h4>
+                  
+                  <form method="post" asp-route-id="@Model.Id" class="forms-sample">
+                    <div class="form-group">
+                      <label for="redirectUrl">Author Name</label>
+                      <input value="@Model.RedirectUrl" name="redirectUrl" type="text" class="form-control" id="redirectUrl" 
+                      placeholder="Site Url">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="redirecrText">Book Name</label>
+                      <input value="@Model.RedirectText" name="redirecrText" type="text" class="form-control" id="redirecrText" 
+                      placeholder="Book Name">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>                        
+                    <a asp-area="manage" asp-controller="promotion" 
+                       asp-action="index" asp-route-id="@Model.Id"   
+                       class="btn btn-light">Cancel
+                   </a>
+                  </form>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>

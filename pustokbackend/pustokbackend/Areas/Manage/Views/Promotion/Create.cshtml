@@ -1,0 +1,32 @@
+﻿@model Promotion
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">First Promotion Create</h4>
+                  
+                  <form method="post" class="forms-sample">
+                    <div class="form-group">
+                      <label asp-for="@Model.RedirectUrl">Site</label>
+                      <input asp-for="@Model.RedirectUrl" value="https://www." class="form-control" placeholder="https://www.">
+                    </div>
+                     <div class="form-group">
+                      <label asp-for="@Model.RedirectText">Image</label>
+                      <input asp-for="@Model.RedirectText" class="form-control" placeholder="Image">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a asp-area="manage" asp-controller="promotion" 
+                       asp-action="index"  
+                       class="btn btn-light">Cancel
+                   </a>                  
+                   </form>
+
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
